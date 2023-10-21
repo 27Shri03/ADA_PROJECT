@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <!-- Include Bootstrap CSS from a CDN -->
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center heading">Task Manager</h1>
+        <hr>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <button id="deleteLastTaskButton" class="btn btn-danger">Delete Task at Top</button>
+                </div>
+                <div id="sortButtons" class="mt-3" style="display: block;">
+                    <button id="sortByDateButton" class="btn btn-primary">Sort by Date</button>
+                    <button id="sortByPriorityButton" class="btn btn-primary">Sort by Priority</button>
+                    <button id="sortTimeAddedButton" class="btn btn-primary">Sort by Time Added</button>
+                </div>
+                <form id="taskForm">
+                    <div class="form-group">
+                        <input type="text" id="taskInput" name="task" class="form-control" placeholder="Enter a task" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="datetime-local" id="dueDateInput" name="dueDate" class="form-control" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="priorityInput" name="priority" class="form-control" placeholder="Priority (1-10)" required="" min="1" max="10">
+                    </div>
+                    
+                    <br>
+
+                    <div class="form-group">
+                        <button type="submit" id="addTaskButton" class="btn btn-primary d-block">Add Task</button>
+                    </div>
+                </form>
+                <button id="searchButton" class="btn btn-primary mt-2">Search</button>
+                <button id="showCompletedButton" class="btn btn-secondary mt-2">Show Completed</button>
+            </div>
+            
+            <div class="col-md-6">
+                <ul id="taskList" class="list-group"></ul>
+                <ul id="completedTasksList" class="list-group d-none"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
